@@ -13,6 +13,8 @@ import com.reactnativenavigation.react.ReactGateway;
 import java.util.Arrays;
 import java.util.List;
 
+import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
+
 public class MainApplication extends NavigationApplication {
 
     @Override
@@ -35,6 +37,7 @@ public class MainApplication extends NavigationApplication {
         // Add additional packages you require here
         // No need to add RnnPackage and MainReactPackage
         return Arrays.<ReactPackage>asList(
+            new AsyncStoragePackage()
             // eg. new VectorIconsPackage()
         );
     }
@@ -43,35 +46,6 @@ public class MainApplication extends NavigationApplication {
     public List<ReactPackage> createAdditionalReactPackages() {
         return getPackages();
     }
-
-    /////////////////
-
-  // private final ReactNativeHost mReactNativeHost =
-  //     new ReactNativeHost(this) {
-  //       @Override
-  //       public boolean getUseDeveloperSupport() {
-  //         return BuildConfig.DEBUG;
-  //       }
-
-  //       @Override
-  //       protected List<ReactPackage> getPackages() {
-  //         @SuppressWarnings("UnnecessaryLocalVariable")
-  //         List<ReactPackage> packages = new PackageList(this).getPackages();
-  //         // Packages that cannot be autolinked yet can be added manually here, for example:
-  //         // packages.add(new MyReactNativePackage());
-  //         return packages;
-  //       }
-
-  //       @Override
-  //       protected String getJSMainModuleName() {
-  //         return "index";
-  //       }
-  //     };
-
-  // @Override
-  // public ReactNativeHost getReactNativeHost() {
-  //   return mReactNativeHost;
-  // }
 
   @Override
   public void onCreate() {
