@@ -19,7 +19,5 @@ export const appScreens = {
 };
 
 export default () => {
-  Navigation.registerComponent(appScreens.homeScreen, () =>
-    WrappedComponent(HomeScreen),
-  );
+  Navigation.registerComponent(appScreens.homeScreen, () => WrappedComponent(HomeScreen));
 };
