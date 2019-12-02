@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StyleSheet, ScrollView, View, Text} from 'react-native';
+import { SafeAreaView, StyleSheet, ScrollView, View, Text } from 'react-native';
 
 import {
   Header,
@@ -16,6 +16,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { Icon } from 'react-native-elements';
 
 const HomeScreen = () => {
   return (
@@ -29,6 +30,7 @@ const HomeScreen = () => {
             </View>
           )}
           <View style={styles.body}>
+            <Icon name="rowing" />
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
               <Text style={styles.sectionDescription}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navigation} from 'react-native-navigation';
+import { Navigation } from 'react-native-navigation';
 import AppStoreProvider from 'store/AppStoreProvider';
 import HomeScreen from 'screens/HomeScreen';
 

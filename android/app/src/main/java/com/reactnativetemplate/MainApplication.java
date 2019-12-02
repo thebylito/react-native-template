@@ -13,7 +13,9 @@ import com.reactnativenavigation.react.ReactGateway;
 import java.util.Arrays;
 import java.util.List;
 
+// Custom packages
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
+import com.oblador.vectoricons.VectorIconsPackage;
 
 public class MainApplication extends NavigationApplication {
 
@@ -37,8 +39,8 @@ public class MainApplication extends NavigationApplication {
         // Add additional packages you require here
         // No need to add RnnPackage and MainReactPackage
         return Arrays.<ReactPackage>asList(
-            new AsyncStoragePackage()
-            // eg. new VectorIconsPackage()
+            new AsyncStoragePackage(),
+            new VectorIconsPackage()
         );
     }
 
