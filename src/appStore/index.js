@@ -3,8 +3,8 @@ import createSagaMiddleware from 'redux-saga';
 import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 import Reactotron from 'reactotron-react-native';
-import reducers from 'store/ducks';
-import rootSaga from 'store/sagas';
+import reducers from 'appStore/ducks';
+import rootSaga from 'appStore/sagas';
 
 const persistConfig = {
   key: 'root',
