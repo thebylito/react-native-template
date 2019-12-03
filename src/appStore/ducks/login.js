@@ -13,20 +13,20 @@ const initialState = {
 export default function login(state = initialState, action) {
   switch (action.type) {
     case Types.GET_REQUEST:
-      return {...state, loading: true};
+      return { ...state, loading: true };
     case Types.GET_SUCCESS:
-      return {data: action.payload, loading: false, error: null};
+      return { data: action.payload, loading: false, error: null };
     case Types.GET_FAILURE:
-      return {...state, loading: false, error: action.payload};
+      return { ...state, loading: false, error: action.payload };
     default:
       return state;
   }
 }
 
 export const Creators = {
-  getLoginRequest: ({field1, field2}) => ({
+  getLoginRequest: ({ field1, field2 }) => ({
     type: Types.GET_REQUEST,
-    payload: {field1, field2},
+    payload: { field1, field2 },
   }),
   getLoginSuccess: data => ({
     type: Types.GET_SUCCESS,

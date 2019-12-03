@@ -17,6 +17,10 @@ function WrappedComponent(Component) {
   };
 }
 
+export const appStacks = {
+  bottomTabs: 'bottomTabs',
+};
+
 export const appScreens = {
   homeScreen: 'homeScreen',
 };
