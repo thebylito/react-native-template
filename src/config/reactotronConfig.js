@@ -4,12 +4,12 @@ import sagaPlugin from 'reactotron-redux-saga';
 import AsyncStorage from '@react-native-community/async-storage';
 
 if (__DEV__) {
-  const tron = Reactotron.setAsyncStorageHandler(AsyncStorage)
-    .configure()
+  const tron = Reactotron.configure()
     .useReactNative()
     .use(reactotronRedux())
     .use(overlay())
     .use(sagaPlugin())
+    .setAsyncStorageHandler(AsyncStorage)
     .connect();
 
   tron.clear();
