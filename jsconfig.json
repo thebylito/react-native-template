@@ -1,0 +1,13 @@
+{
+  "exclude": ["node_modules", "**/node_modules/*"],
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "module": "commonjs",
+    "checkJs": false,
+    "target": "esnext",
+    "jsx": "preserve"
+  },
+  "typeAcquisition": {
+    "include": ["jest"]
+  }
+}
