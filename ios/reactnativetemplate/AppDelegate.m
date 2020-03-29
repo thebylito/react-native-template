@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-//#import <CodePush/CodePush.h> -> Caso use CodePush, descomentar linhas com final '-> 1'
+#import <CodePush/CodePush.h>
 #import <Firebase.h>
 
 #import <React/RCTBridge.h>
@@ -35,11 +35,11 @@ static void InitializeFlipper(UIApplication *application) {
   #endif
   [FIRApp configure];
   NSURL *jsCodeLocation;
-  //#ifdef DEBUG -> 1
+  #ifdef DEBUG
     jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-  //#else -> 1
-  //  jsCodeLocation = [CodePush bundleURL]; -> 1
-  //#endif -> 1
+  #else
+    jsCodeLocation = [CodePush bundleURL]; -> 1
+  #endif
 
   [ReactNativeNavigation bootstrap:jsCodeLocation launchOptions:launchOptions];
   return YES;

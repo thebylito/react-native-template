@@ -4,9 +4,6 @@ import { styles } from './styles';
 import codePush from 'react-native-code-push';
 //import OneSignal from 'react-native-onesignal';
 import { appColors } from 'utils/appColors';
-import { useSelector } from 'react-redux';
-import { goLoginScreen } from 'appNavigation/nonAuthRoutes';
-import { goMainScreen } from 'appNavigation/authRoutes';
 
 const codePushOptions = {
   checkFrequency: codePush.CheckFrequency.MANUAL,
@@ -18,19 +15,8 @@ const LoaderScreen = () => {
     totalBytes: 0,
     receivedBytes: 0,
   });
-  const { appInitialized } = useSelector(state => state.app);
-  const { token } = useSelector(state => state.login);
-  const { userProfile: user } = useSelector(state => state.me.profile);
 
-  const initializeApp = () => {
-    if (appInitialized) {
-      if (token && user) {
-        goMainScreen();
-      } else {
-        goLoginScreen();
-      }
-    }
-  };
+  const initializeApp = () => {};
 
   const handleCodePushStatusChange = (status: SyncStatus) => {
     const { UP_TO_DATE, UPDATE_IGNORED } = codePush.SyncStatus;
@@ -69,12 +55,11 @@ const LoaderScreen = () => {
   //   OneSignal.addEventListener('ids', onIds);
   //   return () => OneSignal.removeEventListener('ids', onIds);
   // }, []);
+
   React.useEffect(() => {
-    if (appInitialized) {
-      checkForUpdate();
-    }
+    checkForUpdate();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [appInitialized]);
+  }, []);
 
   const renderSyncStatus = () => {
     const status =

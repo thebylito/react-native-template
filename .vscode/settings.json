@@ -1,0 +1,9 @@
+{
+  "eslint.autoFixOnSave": true,
+  "flow.enabled": false,
+  "javascript.validate.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.enable": true
+}
