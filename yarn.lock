@@ -5819,10 +5819,10 @@ react-lifecycles-compat@2.0.0:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-2.0.0.tgz#71d9c4cde47114c4102454f76da055c2bc48c948"
   integrity sha512-txfpPCQYiazVdcbMRhatqWKcAxJweUu2wDXvts5/7Wyp6+Y9cHojqXHsLPEckzutfHlxZhG8Oiundbmp8Fd6eQ==
 
-react-native-code-push@^6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/react-native-code-push/-/react-native-code-push-6.1.1.tgz#4c40b61c2c76b12fc84190ba9b05146f259a46ca"
-  integrity sha512-o/R+oAJO2jjW7tKY0ZM17q95dLszbwDYjZ3jWH4juIaXmsg1jl8R+LR+7pxyMVGEIIjQl/LK/j5W+ykXpnT9vg==
+react-native-code-push@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-code-push/-/react-native-code-push-6.2.0.tgz#43274d9d01e998be1358b5bedc534e8edddb2dc2"
+  integrity sha512-PNkFQuccXxweOg1qrhOnfmhZaq9acgVEiFtuaDF4UmVUUPlLLSpntlNzQdlQfZyGPUQavjvgTGb77sQTFbgHsA==
   dependencies:
     code-push "^3.1.0"
     glob "^5.0.15"
