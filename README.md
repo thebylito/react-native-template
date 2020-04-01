@@ -6,7 +6,12 @@
 
 npx react-native-rename "NOME DA SUA APLICACAO" -b PACOTE.DA.SUA.APLICACAO
 
-- apos abrir o arquivo android/app/src/main/res/values/strings.xml, e apagar a linha 2
+- Buscar pelo nome: com.reactnativetemplate e substituir pelo pacote que voce colocou acima
+
+- apos o precesso de renomeacao, abrir o arquivo android/app/src/main/res/values/strings.xml, e apagar a linha 2
+
+# Criar contas no Firebase e AppCenter
+- Colocar as chave em: android/app/build.gradle(Android codePush)
 
 # Bugs conhecidos
 
