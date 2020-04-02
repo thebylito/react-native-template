@@ -38,7 +38,7 @@ static void InitializeFlipper(UIApplication *application) {
   #ifdef DEBUG
     jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
   #else
-    jsCodeLocation = [CodePush bundleURL]; -> 1
+    jsCodeLocation = [CodePush bundleURL];
   #endif
 
   [ReactNativeNavigation bootstrap:jsCodeLocation launchOptions:launchOptions];
