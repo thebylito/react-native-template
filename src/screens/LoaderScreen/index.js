@@ -1,23 +1,27 @@
 import React from 'react';
 import { View, ActivityIndicator, Text } from 'react-native';
-import { styles } from './styles';
 import codePush from 'react-native-code-push';
 //import OneSignal from 'react-native-onesignal';
 import { appColors } from 'utils/appColors';
+import { goHomeScreen } from 'appNavigation/appStack';
+import codePushOptions from 'config/codepushOptions';
+import styles from './styles';
 
-const codePushOptions = {
-  checkFrequency: codePush.CheckFrequency.MANUAL,
-};
-
-const LoaderScreen = () => {
+const LoaderScreen = ({ handleUpdate }) => {
   const [localState, setLocalState] = React.useState({
     haveUpdate: false,
     totalBytes: 0,
     receivedBytes: 0,
   });
 
-  const initializeApp = () => {};
-
+  const initializeApp = () => {
+    const isAuth = true;
+    if (isAuth) {
+      goHomeScreen();
+    } else {
+      //goLoginScreen();
+    }
+  };
   const handleCodePushStatusChange = (status: SyncStatus) => {
     const { UP_TO_DATE, UPDATE_IGNORED } = codePush.SyncStatus;
     if ([UP_TO_DATE, UPDATE_IGNORED].includes(status)) {
@@ -57,7 +61,11 @@ const LoaderScreen = () => {
   // }, []);
 
   React.useEffect(() => {
-    checkForUpdate();
+    if (handleUpdate) {
+      checkForUpdate();
+    } else {
+      initializeApp();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

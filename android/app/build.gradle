@@ -83,6 +83,7 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+apply from: "../../node_modules/react-native-ultimate-config/android/rnuc.gradle"
 apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
@@ -157,28 +158,28 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField "String", "CODEPUSH_KEY", '"1EpHnMuxLpKdQkov8t6mV4sNE1jsNLjwBNGLK"'
-            resValue "string", "app_name", "RNTemplate-Debug"
+            buildConfigField "String", "CODEPUSH_KEY", "\"${project.config.get("CODEPUSH_ANDROID_DEBUG_KEY")}\""
+            resValue "string", "app_name", project.config.get("ADNROID_APP_NAME")+"-Debug"
             signingConfig signingConfigs.debug
         }
         staging {
-            buildConfigField "String", "CODEPUSH_KEY", '"zXVmveSjFlgNn_1nPXCIuAmmqnLfNBNSNTR55"'
+            buildConfigField "string", "CODEPUSH_KEY", "\"${project.config.get("CODEPUSH_ANDROID_STAGING_KEY")}\""
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             applicationIdSuffix ".staging"
             matchingFallbacks = ['release']
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            resValue "string", "app_name", "RNTemplate-Staging"
+            resValue "string", "app_name", project.config.get("ADNROID_APP_NAME")+"-Staging"
             signingConfig signingConfigs.debug
         }
         release {
-            buildConfigField "String", "CODEPUSH_KEY", '"qVcuYLFRmUXgc0Rx0FP28_OwmjdvO3Efz59bJ"'
+            buildConfigField "String", "CODEPUSH_KEY", "\"${project.config.get("CODEPUSH_ANDROID_RELEASE_KEY")}\""
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            resValue "string", "app_name", "RNTemplate"
+            resValue "string", "app_name", project.config.get("ADNROID_APP_NAME")
             signingConfig signingConfigs.debug
         }
     }

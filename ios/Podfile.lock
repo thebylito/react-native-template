@@ -332,6 +332,8 @@ PODS:
     - React-cxxreact (= 0.63.0-rc.1)
     - React-jsi (= 0.63.0-rc.1)
   - React-jsinspector (0.63.0-rc.1)
+  - react-native-ultimate-config (3.1.1):
+    - React
   - React-RCTActionSheet (0.63.0-rc.1):
     - React-Core/RCTActionSheetHeaders (= 0.63.0-rc.1)
   - React-RCTAnimation (0.63.0-rc.1):
@@ -460,6 +462,7 @@ DEPENDENCIES:
   - React-jsi (from `/Volumes/SAMSUNG/Dev/react-native/super-carioca-app/node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `/Volumes/SAMSUNG/Dev/react-native/super-carioca-app/node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `/Volumes/SAMSUNG/Dev/react-native/super-carioca-app/node_modules/react-native/ReactCommon/jsinspector`)
+  - react-native-ultimate-config (from `../node_modules/react-native-ultimate-config`)
   - React-RCTActionSheet (from `/Volumes/SAMSUNG/Dev/react-native/super-carioca-app/node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `/Volumes/SAMSUNG/Dev/react-native/super-carioca-app/node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `/Volumes/SAMSUNG/Dev/react-native/super-carioca-app/node_modules/react-native/Libraries/Blob`)
@@ -548,6 +551,8 @@ EXTERNAL SOURCES:
     :path: "/Volumes/SAMSUNG/Dev/react-native/super-carioca-app/node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "/Volumes/SAMSUNG/Dev/react-native/super-carioca-app/node_modules/react-native/ReactCommon/jsinspector"
+  react-native-ultimate-config:
+    :path: "../node_modules/react-native-ultimate-config"
   React-RCTActionSheet:
     :path: "/Volumes/SAMSUNG/Dev/react-native/super-carioca-app/node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -633,6 +638,7 @@ SPEC CHECKSUMS:
   React-jsi: a968acc454a107677da6027d2111221f57765de9
   React-jsiexecutor: c40a9c0e687bd7a44cc0a616ff4592a823732a0d
   React-jsinspector: 655f32d922ffb180714c0bec652e7e0923b5a5dd
+  react-native-ultimate-config: 0578ad8093801f4d1bfd88cf93babf7264317fd9
   React-RCTActionSheet: ead415a8470cd3552f8cadce3b9b32e0d52e46a7
   React-RCTAnimation: 627dc8ad905b206c9bf10e9527079ef754b6a5dc
   React-RCTBlob: e70ce946cee9d400c5bfb0e8668dd11db852fa5a

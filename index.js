@@ -4,28 +4,13 @@
 
 import 'config/reactotronConfig';
 import { Navigation } from 'react-native-navigation';
-import registerScreens, { appScreens } from 'appNavigation/index';
+import registerScreens from 'appNavigation/registerScreens';
+import codePush from 'react-native-code-push';
+import { goLoaderScreen } from 'appNavigation/appStack';
 
 registerScreens();
-Navigation.events().registerAppLaunchedListener(() => {
-  Navigation.setRoot({
-    root: {
-      stack: {
-        children: [
-          {
-            component: {
-              name: appScreens.homeScreen,
-              options: {
-                topBar: {
-                  title: {
-                    text: 'Home Screen',
-                  },
-                },
-              },
-            },
-          },
-        ],
-      },
-    },
-  });
+
+Navigation.events().registerAppLaunchedListener(async () => {
+  const update = await codePush.checkForUpdate();
+  goLoaderScreen({ handleUpdate: update && update.isMandatory });
 });

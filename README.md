@@ -4,20 +4,38 @@
 
 # Para renomear o projeto
 
-npx react-native-rename "NOME DA SUA APLICACAO" -b PACOTE.DA.SUA.APLICACAO
+- use `npx react-native-rename "NOME DA SUA APLICACAO" -b PACOTE.DA.SUA.APLICACAO`
 
 - Buscar pelo nome: com.reactnativetemplate e substituir pelo pacote que voce colocou acima
 
 - apos o precesso de renomeacao, abrir o arquivo android/app/src/main/res/values/strings.xml, e apagar a linha 2
 
-# Criar contas no Firebase e AppCenter
-- Colocar as chave em: android/app/build.gradle(Android codePush)
+# Criar conta no Firebase
+
+- Colocar arquivo json em `/android/app/`
+- Colocar arquivo plist em `/ios/`
+
+# Codepush
+
+- Definir nas variaveis de ambiente em `.env`
+
+# Onesignal
+
+- Definir nas variaveis de ambiente em `.env`
+
+# Atenção
+
+Apos definir as variaveis de ambiente, é necessario rodar `npx rnuc .env` para que as alterações sejam propagadas.
 
 # Bugs conhecidos
 
+- Por hora não é suportado alterar nome da aplicacao(iOS) via `.env`
+- Por hora não é suportado variante de staging(iOS) via `.env` mas é possivel, e está pronta a implementação no lado nativo da aplicação.
+  - TODO: Documentar como definir variante staging, desde quem não use pelo `.env`
+
 # Dependencias do projeto
 
-react-native 0.62.0
+react-native 0.63.0-rc.1
 
 - react-native-codepush
   - Para atualizacoes remotas
