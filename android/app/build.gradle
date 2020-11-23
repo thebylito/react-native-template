@@ -159,7 +159,7 @@ android {
     buildTypes {
         debug {
             buildConfigField "String", "CODEPUSH_KEY", "\"${project.config.get("CODEPUSH_ANDROID_DEBUG_KEY")}\""
-            resValue "string", "app_name", project.config.get("ADNROID_APP_NAME")+"-Debug"
+            // resValue "string", "app_name", project.config.get("ADNROID_APP_NAME")+"-Debug"
             signingConfig signingConfigs.debug
         }
         staging {
