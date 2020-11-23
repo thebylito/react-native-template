@@ -10,3 +10,7 @@ export const appScreens = {
   loaderScreen: 'loaderScreen',
   homeScreen: 'homeScreen',
 };
+
+export const appComponents = {
+  topFlashMessages: 'topFlashMessages',
+};

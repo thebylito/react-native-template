@@ -17,6 +17,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import { Icon } from 'react-native-elements';
+import { appScreens } from 'appNavigation';
 
 const HomeScreen = () => {
   return (
@@ -104,5 +105,7 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
+
+HomeScreen.screenName = appScreens.homeScreen;
 
 export default HomeScreen;

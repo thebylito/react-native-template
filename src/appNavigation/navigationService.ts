@@ -1,30 +1,19 @@
-import { Navigation, Options } from 'react-native-navigation';
-import appColors from 'utils/appColors';
-import { appStacks } from 'appNavigation';
+import {
+  Navigation,
+  Options,
+  OptionsModalPresentationStyle,
+} from 'react-native-navigation';
 
-const setDefaultOptions = () => {
-  Navigation.setDefaultOptions({
-    topBar: {
-      title: {
-        color: appColors.white,
-        fontWeight: 'bold',
-      },
-      background: {
-        color: appColors.primary,
-      },
-      backButton: {
-        color: appColors.white,
-      },
-    },
-  });
+const setDefaultOptions = async () => {
+  Navigation.setDefaultOptions({});
 };
 
 type PushScreenType = {
-  componentId: string,
-  title: string,
-  screen: string,
-  passProps: string,
-  options: Options,
+  componentId: string;
+  title: string;
+  screen: string;
+  passProps: any;
+  options: Options;
 };
 
 function pushScreen({
@@ -37,7 +26,6 @@ function pushScreen({
   Navigation.push(componentId, {
     component: {
       name: screen,
-      id: screen,
       passProps,
       options: {
         topBar: {
@@ -52,18 +40,23 @@ function pushScreen({
 }
 
 type ShowModalType = {
-  title: string,
-  screen: string,
-  passProps: string,
+  title?: string;
+  screen: string;
+  passProps?: any;
+  options?: Options;
 };
 
-const showModal = ({ title, screen, passProps = {} }: ShowModalType) => {
-  Navigation.showModal({
+const showModal = async ({
+  title,
+  screen,
+  passProps = {},
+  options = {},
+}: ShowModalType) => {
+  return Navigation.showModal({
     stack: {
       children: [
         {
           component: {
-            id: screen,
             name: screen,
             passProps,
             options: {
@@ -78,7 +71,9 @@ const showModal = ({ title, screen, passProps = {} }: ShowModalType) => {
                 direction: 'ltr', // Supported directions are: 'rtl', 'ltr'
                 backgroundColor: 'transparent',
               },
-              modalPresentationStyle: 'overCurrentContext',
+              modalPresentationStyle:
+                OptionsModalPresentationStyle.overCurrentContext,
+              ...options,
             },
           },
         },
@@ -97,25 +92,16 @@ const setRoot = async (screen: string) => {
   });
 };
 
-const setCurrentRootTab = async (screen: string) => {
-  Navigation.mergeOptions(appStacks.bottomTabs, {
-    bottomTabs: {
-      currentTabId: screen,
-    },
-    sideMenu: {
-      left: {
-        visible: false,
-      },
-    },
-  });
+const dismissModal = (componentId: string) => async () => {
+  Navigation.dismissModal(componentId);
 };
 
 const navigationService = {
-  setCurrentRootTab,
   setDefaultOptions,
   pushScreen,
   showModal,
   setRoot,
+  dismissModal,
 };
 
 export default navigationService;

@@ -6,6 +6,7 @@ import { appColors } from 'utils/appColors';
 import { goHomeScreen } from 'appNavigation/appStack';
 import codePushOptions from 'config/codepushOptions';
 import styles from './styles';
+import { appScreens } from 'appNavigation';
 
 const LoaderScreen = ({ handleUpdate }) => {
   const [localState, setLocalState] = React.useState({
@@ -90,4 +91,6 @@ const LoaderScreen = ({ handleUpdate }) => {
   );
 };
 
-export default codePush(codePushOptions)(LoaderScreen);
+const LoaderWithCodePush = codePush(codePushOptions)(LoaderScreen);
+LoaderWithCodePush.screenName = appScreens.loaderScreen;
+export default LoaderWithCodePush;

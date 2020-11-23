@@ -3,8 +3,8 @@ import createSagaMiddleware from 'redux-saga';
 import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 import Reactotron from 'reactotron-react-native';
-import reducers from 'appStore/ducks';
-import rootSaga from 'appStore/sagas';
+import rootReducers from 'appStore/rootReducers';
+import rootSagas from 'appStore/rootSagas';
 
 const persistConfig = {
   key: 'root',
@@ -15,20 +15,17 @@ const persistConfig = {
 const sagaMonitor = __DEV__ ? Reactotron.createSagaMonitor() : null;
 const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
 
-const persistedReducer = persistReducer(persistConfig, reducers);
+const persistedReducer = persistReducer(persistConfig, rootReducers);
 const middlewares = [sagaMiddleware];
 
 const createCompose = __DEV__
-  ? compose(
-      applyMiddleware(...middlewares),
-      Reactotron.createEnhancer()
-    )
+  ? compose(applyMiddleware(...middlewares), Reactotron.createEnhancer())
   : compose(applyMiddleware(...middlewares));
 
 // monta a store
 export default () => {
   const store = createStore(persistedReducer, createCompose);
   const persistor = persistStore(store);
-  sagaMiddleware.run(rootSaga);
+  sagaMiddleware.run(rootSagas);
   return { store, persistor };
 };
