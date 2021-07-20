@@ -19,7 +19,7 @@
     "@react-native-firebase/remote-config": "^10.0.1",
     "apisauce": "^2.0.0",
     "react": "16.13.1",
-    "react-native": "0.63.3",
+    "react-native": "0.64.1",
     "react-native-code-push": "^6.4.0",
     "react-native-elements": "^3.0.0-alpha.1",
     "react-native-flash-message": "^0.1.17",
